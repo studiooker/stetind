@@ -1,5 +1,7 @@
+@import "reset.css";
+
 body{
-    color: white;
+    color: #fff;
     background-color: #002B70;
 }
 nav figure svg{
