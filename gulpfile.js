@@ -8,6 +8,8 @@ var imagemin = require('gulp-imagemin')
 
 var browserSync = require('browser-sync').create()
 
+var ghpages = require('gh-pages');
+
 
 gulp.task("css", function(){
     return gulp.src("src/css/app.css")
@@ -56,6 +58,9 @@ gulp.task("watch", function(){
     gulp.watch("src/css/app.css", ["css"])
     gulp.watch("src/fonts/*", ["fonts"])
     gulp.watch("src/img/*", ["images"])
+})
+gulp.task('deploy', function() { 
+    ghpages.publish('dist', function(err) {});
 })
 
 gulp.task('default', ["html", "css", "watch", "fonts", "images"]);
