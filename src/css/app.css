@@ -1,9 +1,79 @@
-@import "reset.css";
+
+@custom-media --mq-medium (min-width: 375px);
+@custom-media --mq-large (min-width: 768px);
+
+:root{
+    --primary-color: #002B70;
+    --titlesize: 3em;
+}
+@media (--mq-large) {
+    :root{
+        --titlesize: 7em;
+    }
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
 
 body{
     color: #fff;
-    background-color: #002B70;
+    background-color: var(--primary-color);
+    font-family: BeirutDisplay, sans-serif;
+    font-size: 18px;
 }
-nav figure svg{
-    fill: #fff;
+
+nav a{
+    position: fixed;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;    
+}        
+nav a svg {
+    min-width: 130px;
+    fill: #fff ;
+}
+        
+nav a:first-child{
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+nav a:nth-child(2){
+    left: 1em;
+    bottom: 1em;
+}
+nav a:nth-child(3){
+    right: 1em;
+    bottom: 1em;
+}
+    
+
+
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+section h1,h2 {
+    font-size: var(--titlesize)      
+}
+
+
+
+
+
+@media (--mq-medium) {
+    nav a{
+        font-size: 28px;
+    }
+
+    nav a svg{
+        min-width: 108px;
+    }
+    
 }

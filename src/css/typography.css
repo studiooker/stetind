@@ -1,0 +1,9 @@
+@font-face {
+    font-family: BeirutDisplay;
+    src: url(fonts/BeirutDisplayWeb-Regular.eot), url(fonts/BeirutDisplayWeb-Regular.woff2), url(fonts/BeirutDisplayWeb-Regular.woff);
+  }
+
+  @font-face {
+    font-family: BeirutText;
+    src: url(fonts/BeirutTextWeb-Regular.eot), url(fonts/BeirutTextWeb-Regular.woff2), url(fonts/BeirutTextWeb-Regular.woff);
+  }
