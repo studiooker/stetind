@@ -3,6 +3,9 @@ var gulp = require('gulp')
 var postcss = require('gulp-postcss')
 var cleanCss = require('gulp-clean-css')
 var sourceMaps = require('gulp-sourcemaps')
+var concat = require("gulp-concat")
+
+var htmlmin = require('gulp-htmlmin');
 
 var imagemin = require('gulp-imagemin')
 
@@ -12,14 +15,22 @@ var ghpages = require('gh-pages');
 
 
 gulp.task("css", function(){
-    return gulp.src("src/css/app.css")
+    return gulp.src([
+        "src/css/normalize.css",
+        "src/css/typography.css",
+        "src/css/app.css"
+    ])
     .pipe(sourceMaps.init())
     .pipe(
         postcss([
             require("autoprefixer"),
-            require("postcss-preset-env")
+            require("postcss-preset-env")({
+                stage: 1,
+                browsers: ["IE 11", "last 2 versions"]
+            }),
         ])
     )
+    .pipe(concat("app.css"))
     .pipe(
         cleanCss({
             compatibility: 'ie8'
@@ -33,6 +44,7 @@ gulp.task("css", function(){
 
 gulp.task("html", function(){
     return gulp.src("src/index.html")
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest("dist"))
 })
 
