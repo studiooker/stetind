@@ -4,6 +4,8 @@
 
 :root{
     --primary-color: #002B70;
+    --text-color-dark: #000000;
+    --text-color-light: #fff;
     --titlesize: 3em;
 }
 @media (--mq-large) {
@@ -20,10 +22,18 @@ html{
 body{
     color: #fff;
     background-color: var(--primary-color);
-    font-family: BeirutDisplay, sans-serif;
+    background-image: url(img/bg.png);
+    background-position: center top;
+    background-size: cover;
+    font-family: BeirutDisplay, serif;
     font-size: 18px;
+    position: relative;
+   
 }
-
+nav, main{
+    opacity: 0;
+    transition: opacity .2s .1s ease-in;
+}
 nav a{
     position: fixed;
     font-size: 20px;
@@ -33,8 +43,22 @@ nav a{
 nav a svg {
     min-width: 130px;
     fill: #fff ;
+    transition: fill .4s ease-in-out;
 }
-        
+
+nav a.background--dark, h1.background--dark{
+    color: var(--text-color-light)
+}
+nav a.background--light, h1.background--light{
+    color: var(--text-color-dark)
+}     
+nav a.background--dark svg{
+    fill: var(--text-color-light);
+}
+nav a.background--light svg{
+    fill: var(--text-color-dark);
+}
+
 nav a:first-child{
     top: 1em;
     left: 50%;
@@ -66,7 +90,18 @@ section h1,h2 {
     font-size: var(--titlesize)      
 }
 
-
+#bg{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
 
 
 
