@@ -5,6 +5,8 @@ var cleanCss = require('gulp-clean-css')
 var sourceMaps = require('gulp-sourcemaps')
 var concat = require("gulp-concat")
 
+var webpack = require('webpack-stream')
+
 var htmlmin = require('gulp-htmlmin');
 
 var imagemin = require('gulp-imagemin')
@@ -48,6 +50,21 @@ gulp.task("html", function(){
         .pipe(gulp.dest("dist"))
 })
 
+gulp.task("js", function(){
+   return gulp.src("src/js/*")
+    .pipe(
+        webpack({
+            mode: 'production',
+            devtool: 'source-map',
+            output: {
+                filename: "app.js"
+            }
+        })
+    )
+    .pipe(gulp.dest("dist/js"))
+    .pipe(browserSync.stream())
+})
+
 gulp.task("fonts", function () {
     return gulp.src("src/fonts/*")
         .pipe(gulp.dest("dist/fonts"))
@@ -67,6 +84,7 @@ gulp.task("watch", function(){
         }
     })
     gulp.watch("src/*.html", ["html"]).on("change", browserSync.reload)
+    gulp.watch("src/js/*.js", ["js"])
     gulp.watch("src/css/app.css", ["css"])
     gulp.watch("src/fonts/*", ["fonts"])
     gulp.watch("src/img/*", ["images"])
@@ -75,4 +93,4 @@ gulp.task('deploy', function() { 
     ghpages.publish('dist', function(err) {});
 })
 
-gulp.task('default', ["html", "css", "watch", "fonts", "images"]);
+gulp.task('default', ["html", "js", "css", "watch", "fonts", "images"]);
