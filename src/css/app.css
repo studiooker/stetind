@@ -22,13 +22,34 @@ html{
 body{
     color: #fff;
     background-color: var(--primary-color);
-    background-image: url(img/bg.png);
-    background-position: center top;
-    background-size: cover;
     font-family: BeirutDisplay, serif;
-    font-size: 18px;
+    font-size: 16px;
     position: relative;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "kern" 1;
+    -ms-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    -webkit-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    font-feature-settings: "liga" on;
+    font-feature-settings: "dlig" off;
+    font-feature-settings: "tnum" off;
+    font-feature-settings: "onum" off;
+    font-feature-settings: "ss01" off;
    
+}
+p{
+    font-family: 'BeirutText', serif;
+    line-height: 1.35;
+    letter-spacing: -0.4px;
+}
+a {
+    color: #fff;
+    text-decoration: none;
 }
 nav, main{
     opacity: 0;
@@ -87,7 +108,19 @@ section {
     align-items: center;
   }
 section h1,h2 {
-    font-size: var(--titlesize)      
+    font-size: var(--titlesize);
+    font-weight: 400;
+}
+section div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'BeirutText', serif;
+    padding-bottom: 4em;
+}
+
+#contact p, #contact a{
+    margin: .05em;
 }
 
 #bg{
@@ -103,7 +136,9 @@ section h1,h2 {
     object-position: top center;
 }
 
-
+section#story p{
+    max-width: 425px;
+}
 
 @media (--mq-medium) {
     nav a{
