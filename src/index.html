@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Stetind</title>
+    <title>Stetind Captial</title>
+    <meta name="title" content="Stetind Captial">
+    <meta name="description" content="At Stetind Capital, we invest in brave, fun projects. We are an independent actor, and short-term gain is not our focus. We are patient. We look for sustainable projects that strengthen local communities and create jobs. Colourful projects that make people's lives better.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stetind.com/">
+    <meta property="og:title" content="Stetind Captial">
+    <meta property="og:description" content="At Stetind Capital, we invest in brave, fun projects. We are an independent actor, and short-term gain is not our focus. We are patient. We look for sustainable projects that strengthen local communities and create jobs. Colourful projects that make people's lives better.">
+    <meta property="og:image" content="img/stetind.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://stetind.com/">
+    <meta property="twitter:title" content="Stetind Captial">
+    <meta property="twitter:description" content="At Stetind Capital, we invest in brave, fun projects. We are an independent actor, and short-term gain is not our focus. We are patient. We look for sustainable projects that strengthen local communities and create jobs. Colourful projects that make people's lives better.">
+    <meta property="twitter:image" content="img/stetind.png">
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
@@ -11,7 +24,7 @@
 <main>
 
 
-    <nav>
+    <nav class="light">
         <a class="logo" href="#top">
             <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 864 196">
                 <title>Stetind</title>
@@ -24,43 +37,51 @@
 
 
 
-    <section id="top" class="fade light">
-        <div>
+    <section id="top" class="fade light" data-bg="light">
+        <div class="wrapper">
             <h1>Colourful projects that make people's lives better</h1>  
         </div>  
     </section>
     
-    <section id="story" class="fade dark">
+    <section id="story" class="fade dark" data-bg="dark">
         <div>
             <h2>Story</h2>
+            <div>
             <p>A long time ago, climbing the Stetind mountain was considered foolhardy. Many tried, many failed. Today, with the help of skilled guides and modern equipment, even an inexperienced – but committed – mountaineer can reach the summit.</p>
             <p>At Stetind Capital, we invest in brave, fun projects. We are an independent actor, and short-term gain is not our focus. We are patient. We look for sustainable projects that strengthen local communities and create jobs. Colourful projects that make people's lives better.</p>
             <p>Our history is part Norwegian, part Columbian, with our founder Kristoffer Fernando Lærdal originating from Bogotá. Our heritage is the Laerdal family values that have helped save lives for 75 years. </p>
             <p>And our journey is just beginning.</p>
         </div>
-    </section>
-    <section id="contact" class="fade dark">
-        <h2>Get in touch</h2>
-        <div>
-            <p>Kristoffer Lærdal</p>
-            <p>CEO</p></br>
-            <a href="tel:+4791926661">(+47) 919 26 661</a>
-            <a href="mailto:kristoffer@stetind.no" >kristoffer@stetind.no</a>
         </div>
+    </section>
+    <section id="contact" class="fade dark" data-bg="dark">
         <div>
-            <p>Vegard Bø</p>
-            <p>CFO</p></br>
-            <a href="tel:+4791926661">(+47) 919 26 661</a>
-            <a href="mailto:vegard@stetind.no" >vegard@stetind.no</a>
+            <h2>Get in touch</h2>
+            <div class="col-2">
+                <div>
+                    <p>Kristoffer Lærdal</p>
+                    <p>Owner</p></br>
+                    <a href="tel:+4745780411">(+47) 457 80 411</a>
+                    <p>kristoffer<code>@</code>stetind-forvaltning<code>.</code>no</p>
+                    <a href="https://www.linkedin.com/in/kristoffer-l%C3%A6rdal-505b3562/">Linkedin</a>
+                </div>
+                <div>
+                    <p>Vegard Bø</p>
+                    <p>Chairman</p></br>
+                    <a href="tel:+4798825406">(+47) 988 25 406</a>
+                    <p>vegard<code>@</code>stetind-forvaltning<code>.</code>no</p>
+                    <a href="https://www.linkedin.com/in/vegard-b%C3%B8-31140b2/" >Linkedin</a>
+                </div>
+            </div>
         </div>
     </section>
 </main>
-
-<img id="bg" 
+<div id="bg">
+<img 
     srcset="
-        img/stetind_bg_375.png 375w,
-        img/stetind_bg_768.png 768w,
-        img/stetind_bg_1440.png 1440w
+        img/stetind_bg_375.png 768w,
+        img/stetind_bg_768.png 1440w,
+        img/stetind_bg_1440.png 1600w
     "
     sizes="
         100vw"
@@ -68,6 +89,7 @@
         img/stetind_bg_full.png
     "
 >
+</div>
 
 <script src="js/app.js"></script>
 </body>

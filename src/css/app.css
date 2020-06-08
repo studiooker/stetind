@@ -1,19 +1,58 @@
 
-@custom-media --mq-medium (min-width: 375px);
-@custom-media --mq-large (min-width: 768px);
+@custom-media --mq-medium (min-width: 376px);
+@custom-media --mq-large (min-width: 769px);
+@custom-media --mq-xl (min-width: 1201px);
+@custom-media --mq-xxl (min-width: 1441px);
+@custom-media --mq-xxxl (min-width: 1601px);
 
 :root{
     --primary-color: #050C72;
     --text-color-dark: #000;
     --text-color-light: #fff;
-    --titlesize: 3em;
-}
-@media (--mq-large) {
+    --titlesize: clamp(1rem, 10vw, 2.1rem); }
+
+@media (--mq-medium) {
     :root{
-        --titlesize: 7em;
+        --titlesize: clamp(1rem, 7vw, 3rem); 
+        
     }
 }
 
+@media (--mq-large) {
+    :root{
+        --titlesize: clamp(1rem, 6vw, 3.2rem); 
+    }
+}
+
+@media (--mq-xl) {
+    :root{
+        --titlesize: clamp(1rem, 4.6vw, 3.7rem); 
+    }
+}
+
+@media (--mq-xxl) {
+    :root{
+        --titlesize: clamp(1rem, 4vw, 3.9rem); 
+    }
+}
+@media (--mq-xxxl) {
+    :root{
+        --titlesize: clamp(1rem, 3.8vw, 4rem); 
+    }
+}
+
+
+::selection {
+    fill: var(--text-color-light);
+    color: var(--text-color-light);
+    background: #050C72; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+  
+    fill: var(--text-color-light);
+    color: var(--text-color-light);
+    background: #050C72; /* Gecko Browsers */
+  }
 
 html{
     scroll-behavior: smooth;
@@ -44,46 +83,53 @@ body{
 }
 p{
     font-family: 'BeirutText', serif;
-    line-height: 1.35;
+    line-height: 1.55;
     letter-spacing: -0.4px;
 }
 a {
     color: #fff;
     text-decoration: none;
+    transition: all .3s ease-in-out;
 }
+
+a:hover{
+    transform: translateY(-10%);
+}
+
 main{
     opacity: 0;
     transition: opacity .2s .1s ease-in;
 }
 
 nav{
-    position: fixed;
+    position: absolute;
     height: 100%;
     width: 100%;
+    pointer-events: none;
 }
 nav a{
-    position: absolute;
+    position: fixed;
     font-size: 20px;
-    color: var(--text-color-dark);
     text-decoration: none;    
+    transition: all .2s ease-in-out;
+    pointer-events: all;
+    
 }        
-nav a svg {
-    min-width: 130px;
+nav a:first-child {
+    position: absolute;
+    min-width: clamp(120px, 33vw, 240px);
+    transition: all .2s ease-in-out;
+
+}
+nav.light a, nav.light svg{
+    color: var(--text-color-dark);
     fill: var(--text-color-dark) ;
-    transition: fill .4s ease-in-out;
 }
-.white{
-z-index: 1;
+nav.dark a, nav.dark svg{
+    color: var(--text-color-light);
+    fill: var(--text-color-light) ;
 }
-.white nav{
-    opacity: 1;
-}
-.white nav a{
-    color: var(--text-color-light)
-}
-.white nav svg{
-    fill: var(--text-color-light)
-}
+
 
 nav .logo{
     top: 1em;
@@ -116,15 +162,20 @@ section h1,h2 {
     font-size: var(--titlesize);
     font-weight: 400;
 }
-section div{
+section > div{
+    max-width: 65%;
+    padding: 10vh 0;
+}
+section div div{
     display: flex;
     flex-direction: column;
     text-align: center;
     font-family: 'BeirutText', serif;
     padding-bottom: 4em;
-    max-width: 60%;
-    padding: 5vh;
+    line-height: 1.4;
 }
+
+
 .light h1, .light h2{
     color: var(--text-color-dark);
 }
@@ -132,6 +183,7 @@ section div{
 .dark h1, .dark h2{
     color: var(--text-color-light)
 }
+
 
 #contact p, #contact a{
     margin: .05em;
@@ -146,8 +198,13 @@ section div{
     right: 0;
     width: 100%;
     height: 100%;
+   
+}
+#bg img{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: 50% -10%;
+    object-position: 50% 0%;
 }
 
 .fade{
@@ -156,16 +213,35 @@ section div{
 }
 
 section#story p{
-    max-width: 425px;
+    max-width: 510px;
 }
-
+.col-2{
+    justify-content: center;
+}
+.col-2 div{
+    padding:1em;
+}
 @media (--mq-medium) {
+
+    
     nav a{
         font-size: 28px;
     }
 
     nav a svg{
-        min-width: 108px;
     }
+
+    .col-2{
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+   
+   
     
+}
+@media (--mq-large){
+    section .wrapper{
+        max-width: 890px;
+    }
 }
