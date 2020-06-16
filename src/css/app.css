@@ -60,7 +60,7 @@ html{
 
 body{
     color: #fff;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color);    
     font-family: BeirutDisplay, serif;
     font-size: 16px;
     position: relative;
@@ -121,18 +121,19 @@ nav a:first-child {
     transition: all .2s ease-in-out;
 
 }
-nav.light a, nav.light svg{
+nav.light a{
     color: var(--text-color-dark);
-    fill: var(--text-color-dark) ;
 }
-nav.dark a, nav.dark svg{
+nav.dark a{
     color: var(--text-color-light);
-    fill: var(--text-color-light) ;
 }
+nav.light svg{
+    fill: var(--text-color-dark) ;
 
+}
 
 nav .logo{
-    top: 1em;
+    top: 1.5em;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -162,6 +163,10 @@ section h1,h2 {
     font-size: var(--titlesize);
     font-weight: 400;
 }
+h3{
+    font-weight: normal;
+    font-size: clamp(1rem, 6vw, 2rem);
+}
 section > div{
     max-width: 65%;
     padding: 10vh 0;
@@ -174,8 +179,57 @@ section div div{
     padding-bottom: 4em;
     line-height: 1.4;
 }
+.form{
+    display: block;
+    min-width: 100%;
 
+}
+section .form form{
+    margin: 0 auto;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: var(--text-color-light)
+}
 
+form label{
+    margin-top: 1.75em;
+}
+.form input, .form textarea{
+    border: none;
+    padding: .5em;
+    margin-top: .5em;
+    line-height: 1.75;
+    background: rgba(255,255,255,0.22);
+    color: var(--text-color-light)
+
+}
+.form input:focus, textarea:focus{
+    background: rgba(255,255,255,0.14);
+}
+.form input:invalid, .form textarea:invalid{
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 0px solid white;
+    -webkit-text-fill-color: var(--text-color-light);
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255,255,255,0.00) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+button{
+    margin-top: 2em;
+    line-height: 1.75;
+    padding: .5em;
+    border-radius: 100px;
+}
 .light h1, .light h2{
     color: var(--text-color-dark);
 }
@@ -219,7 +273,7 @@ section#story p{
     justify-content: center;
 }
 .col-2 div{
-    padding:1em;
+    padding: 2em;
 }
 @media (--mq-medium) {
 
@@ -233,7 +287,6 @@ section#story p{
 
     .col-2{
         flex-direction: row;
-        justify-content: space-between;
         flex-wrap: wrap;
     }
    
