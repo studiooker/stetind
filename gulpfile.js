@@ -5,9 +5,12 @@ var cleanCss = require('gulp-clean-css')
 var sourceMaps = require('gulp-sourcemaps')
 var concat = require("gulp-concat")
 
+var webpack = require('webpack-stream')
+
 var htmlmin = require('gulp-htmlmin');
 
-var imagemin = require('gulp-imagemin')
+var imagemin = require('gulp-imagemin');
+var imageminWebp = require('imagemin-webp');
 
 var browserSync = require('browser-sync').create()
 
@@ -43,9 +46,24 @@ gulp.task("css", function(){
 })
 
 gulp.task("html", function(){
-    return gulp.src("src/index.html")
+    return gulp.src("src/*.html")
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest("dist"))
+})
+
+gulp.task("js", function(){
+   return gulp.src("src/js/*")
+    .pipe(
+        webpack({
+            mode: 'production',
+            devtool: 'source-map',
+            output: {
+                filename: "app.js"
+            }
+        })
+    )
+    .pipe(gulp.dest("dist/js"))
+    .pipe(browserSync.stream())
 })
 
 gulp.task("fonts", function () {
@@ -55,7 +73,10 @@ gulp.task("fonts", function () {
 
 gulp.task("images", function() {
     return gulp.src("src/img/*")
-        .pipe(imagemin())
+        .pipe(
+            imagemin(
+            )
+        )
         .pipe(gulp.dest("dist/img"))
 })
 
@@ -67,6 +88,7 @@ gulp.task("watch", function(){
         }
     })
     gulp.watch("src/*.html", ["html"]).on("change", browserSync.reload)
+    gulp.watch("src/js/*.js", ["js"])
     gulp.watch("src/css/app.css", ["css"])
     gulp.watch("src/fonts/*", ["fonts"])
     gulp.watch("src/img/*", ["images"])
@@ -75,4 +97,4 @@ gulp.task('deploy', function() { 
     ghpages.publish('dist', function(err) {});
 })
 
-gulp.task('default', ["html", "css", "watch", "fonts", "images"]);
+gulp.task('default', ["html", "js", "css", "watch", "fonts", "images"]);

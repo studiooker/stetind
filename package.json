@@ -27,7 +27,11 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sourcemaps": "^2.6.5",
-    "postcss-preset-env": "^6.7.0"
+    "imagemin-webp": "^6.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "webpack-stream": "^5.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "in-view": "^0.6.1"
+  }
 }
