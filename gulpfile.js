@@ -9,7 +9,8 @@ var webpack = require('webpack-stream')
 
 var htmlmin = require('gulp-htmlmin');
 
-var imagemin = require('gulp-imagemin')
+var imagemin = require('gulp-imagemin');
+var imageminWebp = require('imagemin-webp');
 
 var browserSync = require('browser-sync').create()
 
@@ -45,7 +46,7 @@ gulp.task("css", function(){
 })
 
 gulp.task("html", function(){
-    return gulp.src("src/index.html")
+    return gulp.src("src/*.html")
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest("dist"))
 })
@@ -72,7 +73,10 @@ gulp.task("fonts", function () {
 
 gulp.task("images", function() {
     return gulp.src("src/img/*")
-        .pipe(imagemin())
+        .pipe(
+            imagemin(
+            )
+        )
         .pipe(gulp.dest("dist/img"))
 })
 

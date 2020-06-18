@@ -26,7 +26,3 @@ document.addEventListener("scroll", function(){
 
 })
 
-
-
-
-

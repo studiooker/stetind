@@ -207,6 +207,7 @@ form label{
 }
 .form input:focus, textarea:focus{
     background: rgba(255,255,255,0.14);
+    border: 1px solid var(--text-color-light);
 }
 .form input:invalid, .form textarea:invalid{
 }
@@ -229,6 +230,14 @@ button{
     line-height: 1.75;
     padding: .5em;
     border-radius: 100px;
+    background-color: var(--text-color-light);
+    border: none;
+    color: var(--primary-color);
+    transition: transform .2s ease-in-out;
+    cursor: pointer;
+}
+button:hover{
+    transform: translate(0, -5%);
 }
 .light h1, .light h2{
     color: var(--text-color-dark);
