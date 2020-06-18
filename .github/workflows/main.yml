@@ -10,6 +10,6 @@ jobs:
         fetch-depth: 2
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
-        ftp-server: ftp://ftp.domeneshop.no/
+        ftp-server: ftp.domeneshop.no/
         ftp-username: myFtpUserName
         ftp-password: ${{ secrets.FTP_PASSWORD }}
