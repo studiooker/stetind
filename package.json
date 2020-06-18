@@ -1,0 +1,37 @@
+{
+  "name": "stetind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/studiooker/stetind.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/studiooker/stetind/issues"
+  },
+  "homepage": "https://github.com/studiooker/stetind#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.7.5",
+    "browser-sync": "^2.26.7",
+    "gh-pages": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "imagemin-webp": "^6.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "in-view": "^0.6.1"
+  }
+}

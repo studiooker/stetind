@@ -1,0 +1,309 @@
+
+@custom-media --mq-medium (min-width: 376px);
+@custom-media --mq-large (min-width: 769px);
+@custom-media --mq-xl (min-width: 1201px);
+@custom-media --mq-xxl (min-width: 1441px);
+@custom-media --mq-xxxl (min-width: 1601px);
+
+:root{
+    --primary-color: #050C72;
+    --text-color-dark: #000;
+    --text-color-light: #fff;
+    --titlesize: clamp(1rem, 10vw, 2.1rem); }
+
+@media (--mq-medium) {
+    :root{
+        --titlesize: clamp(1rem, 7vw, 3rem); 
+        
+    }
+}
+
+@media (--mq-large) {
+    :root{
+        --titlesize: clamp(1rem, 6vw, 3.2rem); 
+    }
+}
+
+@media (--mq-xl) {
+    :root{
+        --titlesize: clamp(1rem, 4.6vw, 3.7rem); 
+    }
+}
+
+@media (--mq-xxl) {
+    :root{
+        --titlesize: clamp(1rem, 4vw, 3.9rem); 
+    }
+}
+@media (--mq-xxxl) {
+    :root{
+        --titlesize: clamp(1rem, 3.8vw, 4rem); 
+    }
+}
+
+
+::selection {
+    fill: var(--text-color-light);
+    color: var(--text-color-light);
+    background: #050C72; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+  
+    fill: var(--text-color-light);
+    color: var(--text-color-light);
+    background: #050C72; /* Gecko Browsers */
+  }
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    color: #fff;
+    background-color: var(--primary-color);    
+    font-family: BeirutDisplay, serif;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "kern" 1;
+    -ms-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    -webkit-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    font-feature-settings: "liga" on;
+    font-feature-settings: "dlig" off;
+    font-feature-settings: "tnum" off;
+    font-feature-settings: "onum" off;
+    font-feature-settings: "ss01" off;
+   
+}
+p{
+    font-family: 'BeirutText', serif;
+    line-height: 1.55;
+    letter-spacing: -0.4px;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+a:hover{
+    transform: translateY(-10%);
+}
+
+main{
+    opacity: 0;
+    transition: opacity .2s .1s ease-in;
+}
+
+nav{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+nav a{
+    position: fixed;
+    font-size: 20px;
+    text-decoration: none;    
+    transition: all .2s ease-in-out;
+    pointer-events: all;
+    
+}        
+nav a:first-child {
+    position: absolute;
+    min-width: clamp(120px, 33vw, 240px);
+    transition: all .2s ease-in-out;
+
+}
+nav.light a{
+    color: var(--text-color-dark);
+}
+nav.dark a{
+    color: var(--text-color-light);
+}
+nav.light svg{
+    fill: var(--text-color-dark) ;
+
+}
+
+nav .logo{
+    top: 1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+nav a:nth-child(2){
+    left: 1em;
+    bottom: 1em;
+}
+nav a:nth-child(3){
+    right: 1em;
+    bottom: 1em;
+}
+    
+
+h2{
+    transition: opacity .4s .4s ease-in-out;
+
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+section h1,h2 {
+    font-size: var(--titlesize);
+    font-weight: 400;
+}
+h3{
+    font-weight: normal;
+    font-size: clamp(1rem, 6vw, 2rem);
+}
+section > div{
+    max-width: 65%;
+    padding: 10vh 0;
+}
+section div div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'BeirutText', serif;
+    padding-bottom: 4em;
+    line-height: 1.4;
+}
+.form{
+    display: block;
+    min-width: 100%;
+
+}
+section .form form{
+    margin: 0 auto;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: var(--text-color-light)
+}
+
+form label{
+    margin-top: 1.75em;
+}
+.form input, .form textarea{
+    border: none;
+    padding: .5em;
+    margin-top: .5em;
+    line-height: 1.75;
+    background: rgba(255,255,255,0.22);
+    color: var(--text-color-light)
+
+}
+.form input:focus, textarea:focus{
+    background: rgba(255,255,255,0.14);
+    border: 1px solid var(--text-color-light);
+}
+.form input:invalid, .form textarea:invalid{
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 0px solid white;
+    -webkit-text-fill-color: var(--text-color-light);
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255,255,255,0.00) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+button{
+    margin-top: 2em;
+    line-height: 1.75;
+    padding: .5em;
+    border-radius: 100px;
+    background-color: var(--text-color-light);
+    border: none;
+    color: var(--primary-color);
+    transition: transform .2s ease-in-out;
+    cursor: pointer;
+}
+button:hover{
+    transform: translate(0, -5%);
+}
+.light h1, .light h2{
+    color: var(--text-color-dark);
+}
+
+.dark h1, .dark h2{
+    color: var(--text-color-light)
+}
+
+
+#contact p, #contact a{
+    margin: .05em;
+}
+
+#bg{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+   
+}
+#bg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+}
+
+.fade{
+    transition: all .2s .4s ease-in-out;
+    opacity: 0;
+}
+
+section#story p{
+    max-width: 510px;
+}
+.col-2{
+    justify-content: center;
+}
+.col-2 div{
+    padding: 2em;
+}
+@media (--mq-medium) {
+
+    
+    nav a{
+        font-size: 28px;
+    }
+
+    nav a svg{
+    }
+
+    .col-2{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+   
+   
+    
+}
+@media (--mq-large){
+    section .wrapper{
+        max-width: 890px;
+    }
+}
