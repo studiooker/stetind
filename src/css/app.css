@@ -91,7 +91,7 @@ a {
     text-decoration: none;
     transition: all .3s ease-in-out;
 }
-
+img{max-width: 100%;}
 a:hover{
     transform: translateY(-10%);
 }
@@ -168,7 +168,7 @@ h3{
     font-size: clamp(1rem, 6vw, 2rem);
 }
 section > div{
-    max-width: 65%;
+    max-width: 85%;
     padding: 10vh 0;
 }
 section div div{
@@ -280,9 +280,13 @@ section.story p{
 }
 .col-2{
     justify-content: center;
+    flex-wrap: wrap;
 }
 .col-2 div{
     padding: 2em;
+}
+.col-2 picture{
+    max-width: 100%;
 }
 @media (--mq-medium) {
 
@@ -293,10 +297,20 @@ section.story p{
 
     nav a svg{
     }
-
     .col-2{
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+
+        
+    }
+    .col-2>div{
+        width: 50%;
+    }
+   
+    .col-2 picture{
+        padding: 2em;
+        min-width: 100px;
+        max-width: 400px;
     }
    
    
@@ -306,4 +320,9 @@ section.story p{
     section .wrapper{
         max-width: 890px;
     }
+    section > div{
+        max-width: 65%;
+        padding: 10vh 0;
+    }
+    
 }
