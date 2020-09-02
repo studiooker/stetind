@@ -39,7 +39,7 @@ gulp.task("css", function(){
             compatibility: 'ie8'
         })
     )
-    .pipe(sourceMaps.write())
+    .pipe(sourceMaps.write("."))
 
     .pipe(gulp.dest("dist"))
     .pipe(browserSync.stream())
