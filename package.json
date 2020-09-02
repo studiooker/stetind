@@ -29,7 +29,12 @@
     "gulp-sourcemaps": "^2.6.5",
     "imagemin-webp": "^6.0.0",
     "postcss-preset-env": "^6.7.0",
-    "webpack-stream": "^5.2.1"
+    "webpack-stream": "^5.2.1",
+    "serialize-javascript": ">=3.1.0",
+    "elliptic": ">=6.5.3",
+    "lodash.template": ">=4.5.0",
+    "minimatch": ">=3.0.2",
+    "lodash": ">=4.17.19"
   },
   "dependencies": {
     "in-view": "^0.6.1"
