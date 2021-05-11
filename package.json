@@ -34,7 +34,7 @@
     "elliptic": ">=6.5.3",
     "lodash.template": ">=4.5.0",
     "minimatch": ">=3.0.2",
-    "lodash": ">=4.17.19",
+    "lodash": ">=4.17.21",
     "bl": ">=2.2.1"
   },
   "dependencies": {
