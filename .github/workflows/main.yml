@@ -11,7 +11,9 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp://ftp.domeneshop.no:21/www/
+        server: ftp.domeneshop.no
         username: stetind-capital
         password: ${{ secrets.FTP_PASSWORD }}
+        port: 21
+        server-dir: /www
         local-dir: dist/
