@@ -5,12 +5,13 @@ jobs:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Get latest code
+      uses: actions/checkout@v3
 
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        ftp-server: ftp://ftp.domeneshop.no:21/www/
-        ftp-username: stetind-capital
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        server: ftp://ftp.domeneshop.no:21/www/
+        username: stetind-capital
+        password: ${{ secrets.FTP_PASSWORD }}
         local-dir: dist/
