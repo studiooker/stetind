@@ -5,13 +5,14 @@ jobs:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.1.0
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 2
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      uses: SamKirkland/FTP-Deploy-Action@4.3.4
       with:
         ftp-server: ftp://ftp.domeneshop.no:21/www/
         ftp-username: stetind-capital
         ftp-password: ${{ secrets.FTP_PASSWORD }}
         local-dir: dist/
+# source https://github.com/marketplace/actions/ftp-deploy
