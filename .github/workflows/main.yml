@@ -1,4 +1,8 @@
-on: push
+# source: https://github.com/marketplace/actions/ftp-deploy
+on:
+  push:
+    branches:
+      - main
 name: Publish Website
 jobs:
   FTP-Deploy-Action:
